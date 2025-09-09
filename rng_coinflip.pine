@@ -1,1 +1,89 @@
+// MIT License // Copyright (c) 2025 obisin-ai
+//@version=5
+//──────────────────────────────────────────────────────────────────────────
+// RNG Coin-Flip • Cost-Aware (user-set SL % and TP %, break-even WR shown)
+//──────────────────────────────────────────────────────────────────────────
 
+// ===== COST ASSUMPTIONS (constants) =====
+commTaker = 0.010  // taker fee per fill (% of position)
+commSlip = 0.025   // slippage + spread (% of position)
+commPct = 0//commTaker + commSlip  // per-fill cost
+//===========================================
+
+// Strategy wrapper (broker fee = commPct)
+strategy(title = "RNG Coin-Flip • Cost-Aware", 
+         overlay = true, 
+         initial_capital = 10000000, 
+         default_qty_type = strategy.percent_of_equity, 
+         default_qty_value = 10, 
+         pyramiding = 0, 
+         calc_on_every_tick = false, 
+         commission_type = strategy.commission.percent, 
+         commission_value = commPct)
+
+// ——— USER INPUTS (named arguments) ———————————————————————————————————————
+stopPerc = input.float(title = "Stop-loss (%)", defval = 3.0, step = 0.25, minval = 0.1)
+limitPerc = input.float(title = "Take-profit (%)", defval = 3.0, step = 0.25, minval = 0.1)
+maxTrades = input.int(title = "Maximum trades", defval = 8999, minval = 1)
+maxCandles = input.int(title = "Max candles between trades", defval = 3, minval = 1)
+showLab = input.bool(title = "Show L/S label", defval = false)
+
+// ——— Helper ———————————————————————————————————————————————————————————————
+percentOffset(px, pct) => px * pct / 100.0
+
+// ——— State ———————————————————————————————————————————————————————————————
+var int closedCnt = 0
+var int nextTradeBar = 0
+
+// ——— Main Logic ——————————————————————————————————————————————————————————
+if strategy.position_size == 0 and closedCnt < maxTrades and bar_index >= nextTradeBar
+    dir = math.random() < 0.5 ? 1 : 0
+    isLong = dir == 1
+    entry = close
+    
+    slOff = percentOffset(entry, stopPerc)
+    tpOff = percentOffset(entry, limitPerc)
+    
+    stopP = isLong ? entry - slOff : entry + slOff
+    limitP = isLong ? entry + tpOff : entry - tpOff
+    
+    id = isLong ? "L" : "S"
+    strategy.entry(id, isLong ? strategy.long : strategy.short)
+    strategy.exit(id + "_x", from_entry = id, stop = stopP, limit = limitP)
+    
+    if showLab
+        label.new(bar_index, entry, text = id, style = isLong ? label.style_label_up : label.style_label_down)
+
+// ——— Update trades counter and set next trade timing ———————————————————————
+if strategy.closedtrades > closedCnt
+    closedCnt := strategy.closedtrades
+    // Set random delay for next trade (1 to maxCandles)
+    randomDelay = math.floor(math.random() * maxCandles) + 1
+    nextTradeBar := bar_index + randomDelay
+
+// ——— Stats panel (incl. WR needed) ———————————————————————————————————————
+var table t = table.new(position.top_right, 2, 4)
+
+if barstate.islastconfirmedhistory
+    tot = closedCnt
+    wins = 0
+    fees = 0.0
+    for i = 0 to tot - 1
+        if strategy.closedtrades.profit(i) > 0
+            wins += 1
+        fees += strategy.closedtrades.commission(i)
+    
+    wr = tot > 0 ? wins / tot * 100 : na
+    cost = 2 * commPct  // entry + exit
+    netTP = limitPerc - cost
+    netSL = stopPerc + cost
+    wrBE = netSL / (netTP + netSL) * 100  // break-even WR
+    
+    table.cell(t, 0, 0, "Trades")
+    table.cell(t, 1, 0, str.tostring(tot))
+    table.cell(t, 0, 1, "Win %")
+    table.cell(t, 1, 1, str.tostring(wr, "#.0") + "%")
+    table.cell(t, 0, 2, "Fees paid")
+    table.cell(t, 1, 2, str.tostring(fees, format.mintick))
+    table.cell(t, 0, 3, "WR needed")
+    table.cell(t, 1, 3, str.tostring(wrBE, "#.00") + "%")
