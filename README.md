@@ -217,8 +217,6 @@ This isn't about discouraging edge-seeking. It's about providing the proper base
 
 Doob, J. L. (1953). *Stochastic Processes*. Wiley.
 
-Fama, E. F. (1970). "Efficient Capital Markets: A Review of Theory and Empirical Work." *Journal of Finance*, 25(2), 383-417.
-
 Feller, W. (1957). *An Introduction to Probability Theory and Its Applications, Vol. 1* (2nd ed.). Wiley.
 
 Hansen, P. R. (2005). "A Test for Superior Predictive Ability." *Journal of Business & Economic Statistics*, 23(4), 365-380.
