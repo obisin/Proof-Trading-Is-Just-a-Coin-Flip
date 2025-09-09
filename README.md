@@ -215,18 +215,18 @@ This isn't about discouraging edge-seeking. It's about providing the proper base
 
 ## Sources
 
-Doob, J. L. (1953). *Stochastic Processes*. Wiley.
+Doob, J. L. (1953). *Stochastic Processes*.
 
-Feller, W. (1957). *An Introduction to Probability Theory and Its Applications, Vol. 1* (2nd ed.). Wiley.
+Feller, W. (1957). *An Introduction to Probability Theory and Its Applications, Vol. 1*
 
-Hansen, P. R. (2005). "A Test for Superior Predictive Ability." *Journal of Business & Economic Statistics*, 23(4), 365-380.
+Hansen, P. R. (2005). "A Test for Superior Predictive Ability." 
 
-Harris, L. (2003). *Trading and Exchanges: Market Microstructure for Practitioners*. Oxford University Press.
+Harris, L. (2003). *Trading and Exchanges: Market Microstructure for Practitioners*.
 
-Lo, A. W., & MacKinlay, A. C. (1988). "Stock Market Prices Do Not Follow Random Walks: Evidence from a Simple Specification Test." *Review of Financial Studies*, 1(1), 41-66.
+Lo, A. W., & MacKinlay, A. C. (1988). "Stock Market Prices Do Not Follow Random Walks: Evidence from a Simple Specification Test."
 
-Roll, R. (1984). "A Simple Implicit Measure of the Effective Bid-Ask Spread in an Efficient Market." *Journal of Finance*, 39(4), 1127-1139.
+Roll, R. (1984). "A Simple Implicit Measure of the Effective Bid-Ask Spread in an Efficient Market." 
 
-Samuelson, P. A. (1965). "Proof That Properly Anticipated Prices Fluctuate Randomly." *Industrial Management Review*, 6(2), 41-49.
+Samuelson, P. A. (1965). "Proof That Properly Anticipated Prices Fluctuate Randomly."
 
-Samuelson, P. A. (1973). "Proof That Properly Discounted Present Values of Assets Vibrate Randomly." *Bell Journal of Economics*, 4(2), 369-374.
+Samuelson, P. A. (1973). "Proof That Properly Discounted Present Values of Assets Vibrate Randomly." 
