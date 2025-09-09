@@ -41,7 +41,7 @@ Keep TP/SL within reason for your instrument/timeframe. A 5% move might be spars
 
 **Verify with my RNG Coin-Flip • Cost-Aware TradingView script (works on free accounts)**
 
-**[[Link](https://github.com/obisin/RNG-Coin-Flip-Cost-Aware-TradingView-script/blob/main/rng_coinflip.pine)]**
+**[[Link to Script](https://github.com/obisin/RNG-Coin-Flip-Cost-Aware-TradingView-script/blob/main/rng_coinflip.pine)]**
 
 ---
 
