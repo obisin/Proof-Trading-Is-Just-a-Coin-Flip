@@ -205,10 +205,6 @@ Performance worse than baseline suggests contrarian edge potential. Systematic u
 
 Performance better than baseline indicates positive edge candidates worthy of validation through out-of-sample testing, walk-forward analysis, and realistic slippage assumptions.
 
----
-
-## The Framework
-
 This isn't about discouraging edge-seeking. It's about providing the proper baseline for evaluation. Know where break-even sits, and you'll recognize genuine alpha when it appears.
 
 ---
