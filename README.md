@@ -39,9 +39,9 @@ Same logic applies for any R:R around their respective break-even points.
 
 Keep TP/SL within reason for your instrument/timeframe. A 5% move might be sparse for forex intraday but fine for crypto or higher timeframes. Use reasonable order sizes to ensure fills.
 
-**Verify with my RNG Coin-Flip • Cost-Aware TradingView script (works on free accounts)**
+**Verify with my RNG Coin-Flip • Cost-Aware TradingView script (works on free accounts). Just copy and paste into a new indicator**
 
-**[[Link to Script](https://github.com/obisin/RNG-Coin-Flip-Cost-Aware-TradingView-script/blob/main/rng_coinflip.pine)]**
+**[[Github Link to Code](https://github.com/obisin/RNG-Coin-Flip-Cost-Aware-TradingView-script/blob/main/rng_coinflip.pine)]**
 
 ---
 
