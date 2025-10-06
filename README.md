@@ -226,3 +226,13 @@ Roll, R. (1984). "A Simple Implicit Measure of the Effective Bid-Ask Spread in a
 Samuelson, P. A. (1965). "Proof That Properly Anticipated Prices Fluctuate Randomly."
 
 Samuelson, P. A. (1973). "Proof That Properly Discounted Present Values of Assets Vibrate Randomly." 
+
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G61M09C8)
+
+
+<a href="https://buymeacoffee.com/obisin">
+  <img width="110" height="31" alt="bmc-button" src="https://github.com/user-attachments/assets/a927697f-dabd-46ba-88ac-5b926a5e5a16" />
+</a>
+
